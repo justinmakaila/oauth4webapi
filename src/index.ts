@@ -3565,7 +3565,7 @@ async function processGenericAccessTokenResponse(
     json.expires_in = expiresIn
   }
 
-  if (json.refresh_token !== undefined) {
+  if (json.refresh_token !== undefined || json.refresh_token !== null) {
     assertString(json.refresh_token, '"response" body "refresh_token" property', INVALID_RESPONSE, {
       body: json,
     })
